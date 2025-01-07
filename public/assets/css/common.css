@@ -1,0 +1,111 @@
+/* .<div className="shimmer_product">
+<div className="shimmer_img"></div>
+<div className="shimmer_title"></div>
+<div className="shimmer_desc"></div>
+</div> */
+.shimmer{
+    display: flex;
+    justify-content: space-evenly;
+    margin: 50px;
+    margin-bottom: 200px;
+}
+
+.shimmer_filter_div{
+    height: 100vh;
+    width: 270px;
+}
+
+.shimmer_list_div{
+    /* background-color: red; */
+    height: 200px;
+    width: 782px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.shimmer_product {
+    display: flex;
+    background: #d8d8d8;
+    width: 257px;
+    height: 319px;
+    border-radius: 18px;
+    margin-bottom: 16px;
+}
+
+.shimmer_filter {
+    height: 226px;
+    line-height: 58px;
+}
+
+.shimmer_list {
+    background: #ded9d9;
+    height: 167px;
+    margin-bottom: 64px;
+    margin: 35px;
+}
+
+.shimmer_btn{
+    background: #ded9d9;
+    padding: 31px;
+    margin: 49px;
+}
+
+.active-filter{
+    list-style: disc;
+}
+
+
+.shimmerProductSpecification {
+    background: #eaeaea;
+    height: 100vh;
+    margin: 41px 120px;
+}
+
+.shimmerProductTitle {
+    background: #e2dfdf;
+    padding: 23px;
+    margin: 26px 152px;
+    border-radius: 11px;
+}
+
+.shimmerProductDesc{
+    background: #e2dfdf;
+    padding: 50px;
+    margin: 19px 153px;
+    border-radius: 11px;
+}
+
+.shimmerProductSpecification {
+    background: #eaeaea;
+    height: 54vh;
+    margin: 2px 152px;
+    border-radius: 20px;
+    position: relative;
+}
+
+.shimmerProductSpecDesc {
+    /* background: red; */
+    height: 505px;
+    width: 423px;
+    position: absolute;
+    margin: 62px 23px;
+}
+
+.shimmerProductSpecTitle{
+    background: #dad7d7;
+    padding: 14px;
+    width: 236px;
+    margin: 21px;
+    position: absolute;
+    border-radius: 10px;
+}
+
+.shimmerDesc {
+    background: #dad7d7;
+    width: 414px;
+    margin: 19px;
+    border-radius: 7px;
+    height: 30px;
+    display: block;
+}
