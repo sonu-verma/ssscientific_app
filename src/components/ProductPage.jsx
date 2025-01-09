@@ -7,7 +7,6 @@ const ProductPage = ({ product }) => {
     const { slug } = useParams();
 
     const productInfo = useProductPage(slug)
-    console.log("productInfo", productInfo)
     return (
         <>
             <Breadcrumb title={ productInfo?.name } />

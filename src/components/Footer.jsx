@@ -1,4 +1,7 @@
+import { assetPath } from "../utils/constance";
 const Footer = () => {
+
+    const copyrightYear = new Date().getFullYear();
     return (
         <>
           <footer className="page_footer  text-center c-gutter-100 text-sm-left  ds">
@@ -8,7 +11,7 @@ const Footer = () => {
                           <div className="fw-divider-space divider-xl-160 divider-lg-130 divider-md-90 divider-60">
                           </div>
                           <a href="./" className="logo">
-                              <img src="assets/images/logo.png" alt="" />
+                              <img src={assetPath("images/logo.png")} alt="Logo" />
                               <span className="d-flex flex-column">
                                   <span className="logo-text color-darkgrey">SS Scientific</span>
                               </span>
@@ -19,9 +22,9 @@ const Footer = () => {
                           <div className="fw-divider-space divider-xl-160 divider-lg-130 divider-md-60 divider-30"></div>
                       </div>
                       <div className="col-lg-4 col-md-12 ls order-3 order-lg-2 footer-special-column text-center animate" data-animation="fadeInUp">
-                          <img src="assets/images/logo.png" alt="" />
+                          <img  src={assetPath("images/logo.png")} alt="Logo" />
                           <h6 className="fs-12 text-uppercase">&copy; Copyright 
-                            <span className="copyright_year">2019</span> All Rights Reserved
+                            <span className="copyright_year"> - {copyrightYear}</span> All Rights Reserved
                             </h6>
                       </div>
                       <div className="col-lg-4 col-md-6 order-2 order-lg-3 animate" data-animation="fadeInUp">

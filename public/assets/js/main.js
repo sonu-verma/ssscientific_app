@@ -1,4 +1,7 @@
 "use strict";
+
+let windowLoadInit, documentReadyInit;
+
 //Wrapping all JavaScript code into a IIFE function for prevent global variables creation
 (function ($) {
 
@@ -615,7 +618,8 @@
 
 
 //function that initiating template plugins on window.load event
-    function documentReadyInit() {
+    documentReadyInit = function documentReadyInit() {
+        console.log('document ready init')
         ////////////
         //mainmenu//
         ////////////
@@ -1082,11 +1086,15 @@
     }
 
 //function that initiating template plugins on window.load event
-    function windowLoadInit() {
+    windowLoadInit = function windowLoadInit() {
+
+        console.log("flexslider calling")
         //////////////
         //flexslider//
         //////////////
         if ($().flexslider) {
+
+            console.log("slider")
             var $introSlider = $(".page_slider .flexslider");
             $introSlider.each(function (index) {
                 var $currentSlider = $(this);
@@ -1969,12 +1977,13 @@
             $(this).remove();
         });
     }//eof windowLoadInit
-    $(function () {
-        documentReadyInit();
-        initGoogleMap();
-    });
+    // $(function () {
+    //     documentReadyInit();
+    //     initGoogleMap();
+    // });
 
     $window.on('load', function () {
+        console.log("window loader")
         windowLoadInit();
     }); //end of "window load" event
 
@@ -2072,3 +2081,4 @@
 //end of IIFE function
 })(jQuery);
 
+export { windowLoadInit, documentReadyInit };

@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react"
 import { API_URL } from "./constance";
 
-const useProductList = (filterCategory, filterProduct) => {
-    console.log("filterCategory 1: ", filterCategory)
+const ProductList = (filterCategory, filterProduct) => {
+    // console.log("filterCategory : ", filterCategory)
+    // console.log("filterProduct : ", filterProduct)
     const [products, setProducts] = useState(null)
 
-    useEffect(() => {
+    useEffect( () => {
+        // console.log("fetching product")
         fetchProductList()
     }, [filterCategory, filterProduct]);
 
@@ -19,4 +21,4 @@ const useProductList = (filterCategory, filterProduct) => {
     return products;
 }
 
-export default useProductList
+export default ProductList

@@ -1,6 +1,11 @@
 import { Link } from "react-router-dom";
+import { assetPath } from "../utils/constance";
+import { useState } from "react";
 
 const Navbar = () => {
+
+    const [activeMenu, setActiveMenu] = useState("/")
+    console.log(activeMenu)
     return (
         <>
             <div className="header_absolute">
@@ -110,22 +115,22 @@ const Navbar = () => {
                 <div className="container-fluid">
                     <div className="row d-flex align-items-center justify-content-center">
                     <div className="col-xl-3 col-md-4 col-12 text-center">
-                        <a href="#" className="logo">
-                        <img src="./assets/images/logo.png" alt="" />
-                        <span className="d-flex flex-column">
-                            <span className="logo-text color-darkgrey">SS Scientific</span>
-                        
-                        </span>
-                        </a>
+                        <Link className="logo" to="/">
+                            <img src={ assetPath("images/logo.png") } alt="Logo" />
+                            <span className="d-flex flex-column">
+                                <span className="logo-text color-darkgrey">SS Scientific</span>
+                            
+                            </span>
+                        </Link>
                     </div>
                     <div className="col-xl-6 col-1 text-center">
                     
                         <nav className="top-nav">
                         <ul className="nav sf-menu">
-                            <li><Link to="/">Home</Link></li>
-                            <li><Link to="/about">About</Link></li>
-                            <li><Link to="/products">Products</Link></li>
-                            <li><Link to="/contact">Contact</Link></li>
+                            <li className={ activeMenu == 'home'?'active-menu': ''}><Link onClick={()=> setActiveMenu("home")} to="/">Home</Link></li>
+                            <li className={ activeMenu == 'about'?'active-menu': ''}><Link onClick={()=> setActiveMenu("about")} to="/about">About</Link></li>
+                            <li className={ activeMenu == 'products'?'active-menu': ''}><Link onClick={()=> setActiveMenu("products")} to="/products">Products</Link></li>
+                            <li className={ activeMenu == 'contact'?'active-menu': ''}><Link onClick={()=> setActiveMenu("contact")} to="/contact">Contact</Link></li>
                         </ul>
                         </nav>
                     

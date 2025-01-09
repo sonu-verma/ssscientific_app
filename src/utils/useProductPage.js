@@ -16,7 +16,6 @@ const useProductPage = (slug) =>  {
             }
     
             const json = await productInf.json();
-            console.log("json: ", json); // Log the parsed JSON data
             
             // Example: Update state with product details
             setProductDetail(json.product);

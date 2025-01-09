@@ -20,12 +20,12 @@ const ProductCard = ({ product }) => {
                             
                         </Link>
                         <h2 className="woocommerce-loop-product__title">
-                            <center><Link to={`/product/`+product.slug}>{product?.name} - {product?.id}</Link></center>
+                            <center><Link to={`/product/`+product.slug}>{product?.name}</Link></center>
                         </h2>
                        <div style={{ display: "inline-grid", lineHeight: "30px" }}>
                             <Link to={`/product/`+product.slug}>View More Details</Link>
                             <a 
-                                href="https://ssscientific-bucket.s3.eu-north-1.amazonaws.com/products/documents/D93_NPM%20450_60400_leaflet19.pdf" 
+                                href={`https://ssscientific-bucket.s3.eu-north-1.amazonaws.com/` + product?.default_document?.document_url} 
                                 target="_blank"
                             >Download Catalog</a>
                         </div>

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Breadcrumb from "./breadcrumb";
 import ProductCard from "./ProductCard";
-import useProductList from "../utils/useProductList";
+import ProductList from "../utils/ProductList";
 import Shimmer from "./Shimmer";
 const Products = () => {
 
@@ -20,12 +20,8 @@ const Products = () => {
 		}))
 	}
 
-	const products = useProductList(filterCategory, filterProduct);
+	const products = ProductList(filterCategory, filterProduct);
 
-
-	console.log("products:", products);
-	console.log("filterCategory:", filterCategory);
-	
     return products ? (
         <>
             <Breadcrumb title="Products" />
@@ -33,15 +29,15 @@ const Products = () => {
 				<div className="container">
 					<div className="row">
 						<aside className="col-lg-5 col-xl-3 order-lg-1">
-							{/* <div className="widget widget_product_search"> */}
-								{/* <h3 className="widget-title">Search</h3> */}
-								{/* <form role="search" className="woocommerce-product-search" action="/">
+							<div className="widget widget_product_search">
+								<h3 className="widget-title">Search</h3>
+								<form role="search" className="woocommerce-product-search" action="/">
 									<label className="screen-reader-text" htmlFor="woocommerce-product-search-field-widget">
 										Search for:
 									</label>
-									<input type="search" id="woocommerce-product-search-field-widget" className="search-field" placeholder="Search" name="search" />						
-								</form> */}
-							{/* </div> */}
+									<input type="search" id="woocommerce-product-search-field-widget" className="search-field" placeholder="Search" name="search" value={filterProduct} onChange={ (e) => setfilterProduct(e.target.value)} />						
+								</form>
+							</div>
 
 							<div className="widget woocommerce widget_product_categories">
 								<h3 className="widget-title">Categories</h3>
@@ -54,8 +50,14 @@ const Products = () => {
 											<li key={categoryIndex}>
 												{
 													(
-														<div onClick={ () => productCategory.child_level_categories?.length > 0 ?toggleBrandCategory(categoryIndex) :  setFilterCategory(productCategory.id) }>
-															 - {productCategory.category_name}
+														<div onClick={() => {
+															if (productCategory.child_level_categories?.length > 0) {
+																toggleBrandCategory(categoryIndex);
+															} else {
+																setFilterCategory(productCategory.id);
+															}
+														}}>
+															- {productCategory.category_name}
 														</div>
 													)
 												}
