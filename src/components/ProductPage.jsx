@@ -12,13 +12,13 @@ const ProductPage = ({ product }) => {
             <Breadcrumb title={ productInfo?.name } />
             {
                 productInfo ? (
-            <section className="ls fw-team-template-default single s-pt-60 s-pb-xl-160 s-pb-lg-130 s-pb-md-90 s-pb-60">
+            <section className="ls fw-team-template-default single s-pt-xl-60 s-pt-lg-60 s-pt-md-60 s-pt-60 s-pb-xl-60 s-pb-lg-60 s-pb-md-60 s-pb-60">
 				<div className="container" style={ { marginTop: "0px !important"}}>
 					<div className="row">
                     <div className="col-12">
 							<div className="row">
 								<div className="col-12">
-									<div className="side-item">
+									<div className="side-item product-info-div">
 										<div className="item-media rounded" id="product-image" style={ {display:"inline-grid"} }>
                                             {
                                                 productInfo?.images?.map((image) => (
@@ -31,6 +31,14 @@ const ProductPage = ({ product }) => {
                                                     )
                                                 )
                                             }
+
+                                            <a 
+                                                className='btn btn-gradient small-btn' 
+                                                target='_blank' 
+                                                href={`https://ssscientific-bucket.s3.eu-north-1.amazonaws.com/${productInfo?.default_document?.document_url}`} 
+                                            >   
+                                                Download Catalog    
+                                            </a>
 										</div>
 										
 										<div className="item-content">
@@ -39,52 +47,69 @@ const ProductPage = ({ product }) => {
 											</h2>
 										    ({productInfo?.category?.category_name})
 											<p className="small-text color-main">
-												
 											</p>
 											<div className="divider-30 hidden-below-md"></div>
 											<div className="divider-30 hidden-above-md"></div>
-											<p id="product-description">
-												{ productInfo?.description }
+                                            <p className="product-short-description" dangerouslySetInnerHTML={{ __html: productInfo?.short_description }} >
 											</p>
-											{
-                                                (productInfo?.accessories.length > 0) && (
-                                                    <div>
-                                                    <h2>Specifications</h2>
-                                                    <ul style={ { listStyle:"disc" } }>
-                                                        {
-                                                            productInfo?.accessories?.map( (accessory) => 
-                                                                <li key={accessory.id}>
-                                                                    <b>{accessory.name}</b>
-                                                                    <div>
-                                                                        <ul style={ { listStyle:"circle" } }>
-                                                                            <li>
-                                                                                weight: {accessory.weight}
-                                                                            </li>
-                                                                            <li>
-                                                                                Capacity: {accessory.capacity}
-                                                                            </li>
-                                                                            <li>
-                                                                                Overall Dimensions: {accessory.overall_dimensions}
-                                                                            </li>
-                                                                            <li>
-                                                                                Shipping Dimensions: {accessory.shipping_dimensions}
-                                                                            </li>
-                                                                            <li>
-                                                                                Shipping Weight: {accessory.shipping_weight}
-                                                                            </li>
-                                                                            <li>
-                                                                                Overall Dimensions: {accessory.overall_dimensions}
-                                                                            </li>
-                                                                        </ul>
-                                                                    </div>
-                                                                </li>
-                                                            )
-                                                        }
-                                                    </ul>
+											<p className="product-description"  dangerouslySetInnerHTML={{ __html: productInfo?.description }} >
+											</p>
+
+                                            { 
+                                                productInfo?.item_accessories && (
+                                                    <div className="product-accessories">
+                                                        <span className="page-title">Accessories</span>
+                                                        <p>{productInfo?.item_accessories}</p>
                                                     </div>
                                                 )
-                                                
                                             }
+
+                                            {
+                                               productInfo?.accessories.length > 0 && (
+                                                    <div className="product-specifications">
+                                                        <span className="page-title">Specifications</span>
+                                                        {
+                                                            (productInfo?.accessories.length > 0) && (
+                                                                <ul style={ { listStyle:"disc" } }>
+                                                                    {
+                                                                        productInfo?.accessories?.map( (accessory) => 
+                                                                            <li key={accessory.id}>
+                                                                                <b>{accessory.name}</b>
+                                                                                <div>
+                                                                                    <ul style={ { listStyle:"circle" } }>
+                                                                                        <li>
+                                                                                            Capacity: {accessory.capacity}
+                                                                                        </li>
+                                                                                        <li>
+                                                                                            weight: {accessory.weight}
+                                                                                        </li>
+                                                                                        <li>
+                                                                                            Overall Dimensions: {accessory.overall_dimensions}
+                                                                                        </li>
+                                                                                        <li>
+                                                                                            Shipping Dimensions: {accessory.shipping_dimensions}
+                                                                                        </li>
+                                                                                        <li>
+                                                                                            Shipping Weight: {accessory.shipping_weight}
+                                                                                        </li>
+                                                                                        <li>
+                                                                                            Overall Dimensions: {accessory.overall_dimensions}
+                                                                                        </li>
+                                                                                    </ul>
+                                                                                </div>
+                                                                            </li>
+                                                                        )
+                                                                    }
+                                                                </ul>
+                                                            )
+                                                        }
+                                                    </div>
+                                                )
+                                            }
+                                            
+                                            
+                                         
+											
 											<span className="social-icons">
 												<a href="#" className="fab fa-facebook-f" title="facebook"></a>
 												<a href="#" className="fab fa-telegram-plane" title="telegram"></a>
