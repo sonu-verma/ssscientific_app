@@ -24,7 +24,7 @@ const ProductPage = ({ product }) => {
                                                 productInfo?.images?.map((image) => (
                                                         <img 
                                                         key= {image.id}
-                                                        src={`https://ssscientific-bucket.s3.eu-north-1.amazonaws.com/${image.image_url}`} 
+                                                        src={`${image.image_url}`} 
                                                         // src={image.image_url} 
                                                         style={ { height: "200px", width: "200px"} }
                                                         />
@@ -35,7 +35,8 @@ const ProductPage = ({ product }) => {
                                             <a 
                                                 className='btn btn-gradient small-btn' 
                                                 target='_blank' 
-                                                href={`https://ssscientific-bucket.s3.eu-north-1.amazonaws.com/${productInfo?.default_document?.document_url}`} 
+                                                href={`${productInfo?.default_document?.document_url}`} 
+                                                style={ {marginTop: "30px"}}
                                             >   
                                                 Download Catalog    
                                             </a>
