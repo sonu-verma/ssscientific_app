@@ -6,11 +6,11 @@ const PortfolioCard = ({portfolio}) => {
         <div className={`col-xl-4 col-sm-6 ${portfolio.filterType}`}>
             <div className="vertical-item item-gallery content-absolute text-center ds">
                 <div className="item-media">
-                    <img src= {assetPath("/images/gallery/full/"+portfolio.imageName)} alt="img" />
+                    <img src= {assetPath("images/gallery/full/"+portfolio.imageName)} alt="img" />
                 </div>
                 <div className="item-content">
                     <div className="links-wrap">
-                    <a className="link-zoom photoswipe-link" title="" href= {assetPath("/images/gallery/full/"+portfolio.imageName)}></a>
+                    <a className="link-zoom photoswipe-link" title="" href= {assetPath("images/gallery/full/"+portfolio.imageName)}></a>
                     {/* <Link to="/products"><i className="link-anchor" title=""/></Link> */}
                     </div>
                     <h6>

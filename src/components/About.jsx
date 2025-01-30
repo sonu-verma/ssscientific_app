@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import Breadcrumb from "./breadcrumb"
 
 const About = () => {
@@ -14,7 +15,7 @@ const About = () => {
 								</span>
 							</h2>
 							<div className="divider-30"></div>
-							<a className="btn btn-gradient big-btn" href="./contact.html">Contact Us</a>
+							<Link  className="btn btn-gradient big-btn"  to="/contact">Contact Us</Link>
 						</div>
 						<div className="col-12 col-lg-8 text-center">
 							<div className="divider-35 hidden-above-lg"></div>
