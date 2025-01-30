@@ -1,5 +1,5 @@
 import { useState } from "react"
-import Breadcrumb from "./breadcrumb"
+import Breadcrumb from "./Breadcrumb"
 import { API_URL } from "../utils/constance";
 
 const Contact = () => {

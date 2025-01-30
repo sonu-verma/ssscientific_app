@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom"
-import Breadcrumb from "./breadcrumb"
+import Breadcrumb from "./Breadcrumb"
 import useProductPage from "../utils/useProductPage";
 import ShimmerProductPage from "./ShimmerProductPage";
 

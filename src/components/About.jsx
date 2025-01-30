@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import Breadcrumb from "./breadcrumb"
+import Breadcrumb from "./Breadcrumb"
 
 const About = () => {
     return (

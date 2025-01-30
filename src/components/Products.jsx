@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Breadcrumb from "./breadcrumb";
+import Breadcrumb from "./Breadcrumb";
 import ProductCard from "./ProductCard";
 import ProductList from "../utils/ProductList";
 import Shimmer from "./Shimmer";
